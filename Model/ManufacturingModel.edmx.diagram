@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97cdc72588bd47deae80620f5f84dfab" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.Asset" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="Model1.BlobStorageMetaData" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="Model1.FK__BlobStorageM__Id__2F10007B" />
+        <EntityTypeShape EntityType="Model1.Event" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="Model1.EventTypes" Width="1.5" PointX="3.75" PointY="5.375" />
+        <AssociationConnector Association="Model1.FK__Events__AssetId__34C8D9D1" />
+        <AssociationConnector Association="Model1.FK__Events__EventTyp__33D4B598" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
