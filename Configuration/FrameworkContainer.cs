@@ -7,6 +7,8 @@ using Manufacturing.Framework.Datasource;
 using Manufacturing.Framework.Repository.Implementation;
 using Microsoft.ConventionConfiguration;
 using StructureMap;
+using StructureMap.Graph;
+using StructureMap.Pipeline;
 
 namespace Manufacturing.Framework.Configuration
 {
@@ -23,9 +25,9 @@ namespace Manufacturing.Framework.Configuration
                 x.Scan(y =>
                 {
                     y.TheCallingAssembly();
-                    y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(InstanceScope.Unique));
+                    y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new SingletonLifecycle()));
 
-                    y.ExcludeType<IMessageSender>();
+                    //y.ExcludeType<IMessageSender>();
                     y.ExcludeType<BlobRepository>();
                 });
 
