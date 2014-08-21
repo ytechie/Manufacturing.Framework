@@ -155,9 +155,6 @@
     <Compile Include="Datasource\RandomDatasourceRecordGenerator.cs" />
     <Compile Include="Datasource\SampleEvent.cs" />
     <Compile Include="DataWarehouse\WarehouseInjestor.cs" />
-    <Compile Include="Dto\DatasourceConfiguration.cs" />
-    <Compile Include="Dto\DatasourceRecord.cs" />
-    <Compile Include="Dto\EventRecord.cs" />
     <Compile Include="Logging\LoggingUtils.cs" />
     <Compile Include="Model\Asset.cs">
       <DependentUpon>ManufacturingModel.tt</DependentUpon>
@@ -198,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <Content Include=".gitignore" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -206,7 +202,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ManufacturingModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="LICENSE" />
     <None Include="Model\ManufacturingModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ManufacturingModel.Context.cs</LastGenOutput>
@@ -221,10 +216,15 @@
       <DependentUpon>ManufacturingModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dto\Manufacturing.Framework.Dto.csproj">
+      <Project>{32AEFB8C-211A-406C-B0EE-35A9219B1147}</Project>
+      <Name>Manufacturing.Framework.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
