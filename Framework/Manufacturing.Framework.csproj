@@ -144,7 +144,6 @@
     <Compile Include="Configuration\ServiceBusQueueInformation.cs" />
     <Compile Include="Configuration\ServiceBusTopicSubscriptionInformation.cs" />
     <Compile Include="Configuration\StorageConfiguration.cs" />
-    <Compile Include="DataPusher\IDataPusher.cs" />
     <Compile Include="Datasource\DataReceivedEventArgs.cs" />
     <Compile Include="Datasource\DatasourceRecordExtensions.cs" />
     <Compile Include="Datasource\DatasourceRecordSerializer.cs" />
