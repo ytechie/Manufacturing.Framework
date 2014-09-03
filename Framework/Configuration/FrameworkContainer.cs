@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Bootstrap.StructureMap;
 using Manufacturing.Framework.Dto;
+using Manufacturing.Framework.Utility;
 using Microsoft.FluentMessaging;
 using log4net;
 using Manufacturing.Framework.Datasource;
@@ -25,13 +26,14 @@ namespace Manufacturing.Framework.Configuration
                 x.Scan(y =>
                 {
                     y.TheCallingAssembly();
-                    y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new SingletonLifecycle()));
+                    y.SingleImplementationsOfInterface().OnAddedPluginTypes(z => z.LifecycleIs(new TransientLifecycle()));
 
                     //y.ExcludeType<IMessageSender>();
                     y.ExcludeType<BlobRepository>();
                 });
 
-                x.For<ISerializer<DatasourceRecord>>().Use<DatasourceRecordSerializer>();
+                x.For<IDatasourceRecordSerializer>().Use<DatasourceRecordSerializer>().AlwaysUnique();
+                x.For<ITimer>().Use<ThreadingTimer>().AlwaysUnique();
             });
 
             
