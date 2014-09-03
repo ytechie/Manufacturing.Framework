@@ -27,5 +27,12 @@ namespace Manufacturing.Framework.DataPusher
             //Just a simple, empty teste to make sure our initialize is working
             _container.AssertConfigurationIsValid();
         }
+
+        [TestMethod]
+        public void EnsureDefaultIPusherIsEventHubsDataPusher()
+        {
+            var pusher = _container.GetInstance<IDataPusher>();
+            Assert.AreEqual(typeof(EventHubsDataPusher), pusher.GetType());
+        }
     }
 }

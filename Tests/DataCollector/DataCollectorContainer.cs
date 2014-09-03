@@ -1,7 +1,9 @@
 ﻿using System.Linq;
 using Manufacturing.DataCollector;
+using Manufacturing.DataCollector.Datasources;
 using Manufacturing.DataCollector.Datasources.Simulation;
 using Manufacturing.Framework.Configuration;
+using Manufacturing.Framework.Datasource;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StructureMap;
 
@@ -41,6 +43,20 @@ namespace Manufacturing.Framework.DataCollector
             var datasources = DataCollectorContainer.GetAllDatasources(_container).ToList();
 
             Assert.IsTrue(datasources.Count() >= 3);
+        }
+
+        [TestMethod]
+        public void EnsureDatasourceAggregatorCreatedCorrectly()
+        {
+            var datasource = _container.GetInstance<DatasourceAggregator>();
+            Assert.AreEqual(typeof(DatasourceAggregator), datasource.GetType());
+        }
+
+        [TestMethod]
+        public void EnsureAllDatsourcesAreRegistered()
+        {
+            var datasources = _container.GetAllInstances<IDatasource>();
+            Assert.IsTrue(datasources.Count() > 1);
         }
 
         [TestMethod]
