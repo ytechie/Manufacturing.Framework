@@ -147,7 +147,6 @@
     <Compile Include="Datasource\DataReceivedEventArgs.cs" />
     <Compile Include="Datasource\DatasourceRecordExtensions.cs" />
     <Compile Include="Datasource\DatasourceRecordSerializer.cs" />
-    <Compile Include="Datasource\IDatasource.cs" />
     <Compile Include="Datasource\IDatasourceRecordSerializer.cs" />
     <Compile Include="Configuration\FrameworkContainer.cs" />
     <Compile Include="Datasource\InvalidDatasourceRecordConversion.cs" />
