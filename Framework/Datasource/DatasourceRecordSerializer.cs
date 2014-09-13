@@ -20,6 +20,15 @@ namespace Manufacturing.Framework.Datasource
         {
             _serializer = TypeModel.Create();
             _serializer.Add(typeof (List<DatasourceRecord>), true);
+            
+            _serializer[typeof (DatasourceRecord)]
+                .AddSubType(8, typeof(EventRecord))
+                .Add(1, "DatasourceId")
+                .Add(2, "Timestamp")
+                .Add(3, "IntervalSeconds")
+                .Add(5, "Value")
+                .Add(6, "EncodedDataType");
+
             _serializer.CompileInPlace();
         }
 

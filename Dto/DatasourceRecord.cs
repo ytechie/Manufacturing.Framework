@@ -1,26 +1,18 @@
 ﻿using System;
 using System.Linq;
-using ProtoBuf;
 
 namespace Manufacturing.Framework.Dto
 {
     /// <summary>
     ///     Represents a record from a datasource
     /// </summary>
-    [ProtoContract]
-    [ProtoInclude(8, typeof(EventRecord))]
     public class DatasourceRecord
     {
-        [ProtoMember(1)]
         public int DatasourceId { get; set; }
-        [ProtoMember(2)]
         public DateTime Timestamp { get; set; }
-        [ProtoMember(3)]
         public int IntervalSeconds { get; set; } //TODO: make more granular/generic?
-        [ProtoMember(5)]
         public byte[] Value { get; set; }
 
-        [ProtoMember(6)]
         public int EncodedDataType
         {
             get

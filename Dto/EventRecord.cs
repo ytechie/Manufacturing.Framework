@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
-using ProtoBuf;
+//using ProtoBuf;
 
 namespace Manufacturing.Framework.Dto
 {
-    [ProtoContract]
+    //[ProtoContract]
     public class EventRecord : DatasourceRecord
     {
-        [ProtoMember(1)]
+        //[ProtoMember(1)]
         public int EventType { get; protected set; }
 
-        [ProtoMember(2)]
+        //[ProtoMember(2)]
         public Dictionary<int, byte[]> MetaData { get; set; }
 
         public EventRecord()
