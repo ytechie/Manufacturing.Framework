@@ -151,6 +151,7 @@
     <Compile Include="Datasource\Datasources\RandomDatasource.cs" />
     <Compile Include="Datasource\DatasourceRecordExtensions.cs" />
     <Compile Include="Datasource\EventRecord.cs" />
+    <Compile Include="Datasource\JsonDatasourceRecordSerializer.cs" />
     <Compile Include="Datasource\SampleEvent.cs" />
     <Compile Include="Logging\LoggingUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

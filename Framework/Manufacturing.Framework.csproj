@@ -150,6 +150,7 @@
     <Compile Include="Datasource\IDatasourceRecordSerializer.cs" />
     <Compile Include="Configuration\FrameworkContainer.cs" />
     <Compile Include="Datasource\InvalidDatasourceRecordConversion.cs" />
+    <Compile Include="Datasource\JsonDatasourceRecordSerializer.cs" />
     <Compile Include="Datasource\RandomDatasourceRecordGenerator.cs" />
     <Compile Include="Datasource\SampleEvent.cs" />
     <Compile Include="DataWarehouse\WarehouseInjestor.cs" />
