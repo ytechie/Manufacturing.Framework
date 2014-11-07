@@ -140,6 +140,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alarms\Alarm.cs" />
     <Compile Include="Configuration\Modules\IDatasourceConfiguration.cs" />
     <Compile Include="Configuration\ServiceBusQueueInformation.cs" />
     <Compile Include="Configuration\ServiceBusTopicSubscriptionInformation.cs" />
